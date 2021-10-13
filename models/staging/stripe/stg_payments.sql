@@ -4,8 +4,6 @@ with payments  as (
     amount/100 as amount 
     FROM "DBT_TEST"."STRIPE"."PAYMENT"
     WHERE status = 'success'
-
-
 )
 
 SELECT * FROM payments
