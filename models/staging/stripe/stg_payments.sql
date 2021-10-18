@@ -2,7 +2,7 @@ with payments  as (
     SELECT 
     orderid as order_id,
     amount/100 as amount 
-    FROM "DBT_TEST"."STRIPE"."PAYMENT"
+    FROM {{ source('stripe', 'payment')}}
     WHERE status = 'success'
 )
 
